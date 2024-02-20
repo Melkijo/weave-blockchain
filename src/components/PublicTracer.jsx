@@ -43,7 +43,7 @@ const TraceProduct = () => {
       setLoading(true);
       getAssetById(searchQuery);
     }
-  }, [searchQuery]);
+  }, []);
 
   const getAssetById = async (assetId) => {
     if (window.ethereum) {

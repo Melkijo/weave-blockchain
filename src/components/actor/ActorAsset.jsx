@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useWeb3 } from "../Web3Provider";
 import CreateThread from "./process_form_modal/2_CreateThread";
 import DistributeThread from "./process_form_modal/3_DistributeThread";
 import FabricWeaving from "./process_form_modal/4_FabricWeaving";
 import SellFabric from "./process_form_modal/5_SellFabric";
 import { stateName, fabricTypeName } from "../../helpers/constants";
-import QRCode from "react-qr-code";
-import domtoimage from "dom-to-image";
-import toImg from "react-svg-to-image";
+// import QRCode from "react-qr-code";
+import QRCode from "qrcode";
 
 function ActorAsset() {
   const [assets, setAssets] = useState([]);
@@ -119,29 +118,32 @@ function ActorAsset() {
     setQrCode(`http://localhost:5173/public-tracer?q=${assetId}`);
     document.getElementById("my_modal_1").showModal();
   };
+  const canvasRef = useRef(null);
 
   const handleDownload = () => {
-    const qrCodeElement = document.getElementById("qrCode"); // Use getElementById
-
-    if (!qrCodeElement) {
-      console.error("QR code element not found!");
-      return;
+    if (canvasRef.current) {
+      const qrCodeDataURL = canvasRef.current.toDataURL();
+      const downloadLink = document.createElement("a");
+      downloadLink.href = qrCodeDataURL;
+      downloadLink.download = "qrcode.png"; // You can change the filename if needed
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
     }
-
-    // Convert QR code to image and trigger download
-    domtoimage
-      .toBlob(qrCodeElement)
-      .then((blob) => {
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "qrcode.png";
-        link.click();
-        URL.revokeObjectURL(link.href);
-      })
-      .catch((error) => {
-        console.error("Error generating QR code image:", error);
-      });
   };
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (canvas) {
+      QRCode.toCanvas(canvas, qrCode, (error) => {
+        if (error) {
+          console.error(error);
+        } else {
+          console.log("success!");
+        }
+      });
+    }
+  }, [qrCode]);
   return (
     <div>
       <div className="flex items-center justify-between my-4">
@@ -260,13 +262,27 @@ function ActorAsset() {
       </table>
       <dialog id="my_modal_1" className="modal ">
         <div className="modal-box">
-          <h3 className="font-bold text-lg text-center">Hello!</h3>
+          <h3 className="font-bold text-lg text-center mb-3">QR Generator</h3>
           <div className="py-3 bg-blue-300 flex justify-center">
-            {qrCode && <QRCode id="qrCode" value={qrCode} />}
+            {/* {qrCode && (
+              <QRCode id="qrCode" value={qrCode} level="H" ref={qrCodeRef} />
+            )} */}
+            <canvas ref={canvasRef} id="canvas" />
           </div>
-          <button className="btn btn-success" onClick={handleDownload}>
-            Download QR Code
-          </button>
+          <div className="flex justify-center flex-col items-center gap-3">
+            {qrCode && (
+              <a
+                href={qrCode}
+                target="_blank"
+                className="mt-3 text-blue-500 underline hover:text-blue-700"
+              >
+                {qrCode}
+              </a>
+            )}
+            <button className="btn btn-success" onClick={handleDownload}>
+              Download QR Code
+            </button>
+          </div>
 
           <div className="modal-action">
             <form method="dialog">
