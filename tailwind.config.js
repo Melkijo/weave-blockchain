@@ -7,7 +7,8 @@ export default {
     theme: {
         extend: {},
         fontFamily: {
-            sans: ['roboto', 'Fira Sans']
+            sans: ['roboto', 'Fira Sans'],
+            display: ['Lexend']
         },
     },
     plugins: [require("daisyui")],
