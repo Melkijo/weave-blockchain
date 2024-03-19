@@ -1,5 +1,5 @@
 {
-  "contractName": "WeaveChain",
+  "contractName": "WeaveChain2",
   "abi": [
     {
       "inputs": [],
@@ -48,6 +48,29 @@
       ],
       "name": "ActorCreated",
       "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_price",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_rawMaterial",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_ipfs",
+          "type": "string"
+        }
+      ],
+      "name": "addRawMaterial",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
     },
     {
       "anonymous": false,
@@ -194,411 +217,6 @@
     {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "actorAssetsByAddress",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "id",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "time",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [],
-      "name": "actorIdCounter",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "name": "actorsByAddress",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "id",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "actorAddress",
-          "type": "address"
-        },
-        {
-          "internalType": "string",
-          "name": "name",
-          "type": "string"
-        },
-        {
-          "internalType": "uint8",
-          "name": "role",
-          "type": "uint8"
-        },
-        {
-          "internalType": "string",
-          "name": "place",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "actorsById",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "id",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "actorAddress",
-          "type": "address"
-        },
-        {
-          "internalType": "string",
-          "name": "name",
-          "type": "string"
-        },
-        {
-          "internalType": "uint8",
-          "name": "role",
-          "type": "uint8"
-        },
-        {
-          "internalType": "string",
-          "name": "place",
-          "type": "string"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [],
-      "name": "addressContractOwner",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [],
-      "name": "assetIdCounter",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "fabricDetailsById",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "id",
-          "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "rawMaterial",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "threadType",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "threadQuality",
-          "type": "string"
-        },
-        {
-          "internalType": "uint8",
-          "name": "dyeType",
-          "type": "uint8"
-        },
-        {
-          "internalType": "string",
-          "name": "pattern",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "origin",
-          "type": "string"
-        },
-        {
-          "internalType": "uint8",
-          "name": "fabricType",
-          "type": "uint8"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "payableAssetsById",
-      "outputs": [
-        {
-          "internalType": "uint8",
-          "name": "trackerNumber",
-          "type": "uint8"
-        },
-        {
-          "internalType": "uint8",
-          "name": "state",
-          "type": "uint8"
-        },
-        {
-          "internalType": "uint256",
-          "name": "price",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address payable",
-          "name": "recentOwner",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint8",
-          "name": "",
-          "type": "uint8"
-        }
-      ],
-      "name": "tracerAssets",
-      "outputs": [
-        {
-          "internalType": "uint8",
-          "name": "state",
-          "type": "uint8"
-        },
-        {
-          "internalType": "address",
-          "name": "actorAddress",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "price",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "time",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint8",
-          "name": "buyStatus",
-          "type": "uint8"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_address",
-          "type": "address"
-        }
-      ],
-      "name": "getActorRole",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_address",
-          "type": "address"
-        }
-      ],
-      "name": "getRegisterStatus",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_address",
-          "type": "address"
-        }
-      ],
-      "name": "getActorAssets",
-      "outputs": [
-        {
-          "components": [
-            {
-              "internalType": "uint256",
-              "name": "id",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "time",
-              "type": "uint256"
-            }
-          ],
-          "internalType": "struct WeaveChain.ActorAsset[]",
-          "name": "",
-          "type": "tuple[]"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_address",
-          "type": "address"
-        },
-        {
-          "internalType": "string",
-          "name": "_name",
-          "type": "string"
-        },
-        {
-          "internalType": "uint8",
-          "name": "_role",
-          "type": "uint8"
-        },
-        {
-          "internalType": "string",
-          "name": "_place",
-          "type": "string"
-        }
-      ],
-      "name": "registerActor",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_price",
-          "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "_rawMaterial",
-          "type": "string"
-        }
-      ],
-      "name": "addRawMaterial",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "uint256",
           "name": "_assetId",
           "type": "uint256"
@@ -616,6 +234,11 @@
         {
           "internalType": "string",
           "name": "_threadQuality",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_ipfs",
           "type": "string"
         }
       ],
@@ -635,6 +258,11 @@
           "internalType": "uint256",
           "name": "_price",
           "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_ipfs",
+          "type": "string"
         }
       ],
       "name": "distributeThread",
@@ -673,27 +301,14 @@
           "internalType": "uint8",
           "name": "_fabricType",
           "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "_ipfs",
+          "type": "string"
         }
       ],
       "name": "fabricWeaving",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_assetId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_price",
-          "type": "uint256"
-        }
-      ],
-      "name": "sellFabric",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -709,8 +324,420 @@
       "name": "purchaseAsset",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function",
-      "payable": true
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_role",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "_place",
+          "type": "string"
+        }
+      ],
+      "name": "registerActor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_assetId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_price",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_ipfs",
+          "type": "string"
+        }
+      ],
+      "name": "sellFabric",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "actorAssetsByAddress",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "actorIdCounter",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "actorsByAddress",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "actorAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "role",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "place",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "actorsById",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "actorAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "role",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "place",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "addressContractOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "assetIdCounter",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "fabricDetailsById",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "rawMaterial",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "threadType",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "threadQuality",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "ipfs",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "dyeType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "string",
+          "name": "pattern",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "origin",
+          "type": "string"
+        },
+        {
+          "internalType": "uint8",
+          "name": "fabricType",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "getActorAssets",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "time",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct WeaveChain.ActorAsset[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "getActorRole",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "getRegisterStatus",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "payableAssetsById",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "trackerNumber",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "state",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "ipfs",
+          "type": "string"
+        },
+        {
+          "internalType": "address payable",
+          "name": "recentOwner",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "name": "tracerAssets",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "state",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "actorAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "ipfs",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "buyStatus",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"actorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"role\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"place\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"log\",\"type\":\"string\"}],\"name\":\"ActorCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"actorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"log\",\"type\":\"string\"}],\"name\":\"AssetAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"}],\"name\":\"AssetInitiated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"oldState\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"newState\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"}],\"name\":\"AssetProcessed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address payable\",\"name\":\"seller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"buyer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"state\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"}],\"name\":\"AssetPurchased\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"actorAssetsByAddress\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"actorIdCounter\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"actorsByAddress\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"actorAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"role\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"place\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"actorsById\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"actorAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"role\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"place\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_price\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_rawMaterial\",\"type\":\"string\"}],\"name\":\"addRawMaterial\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"addressContractOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"assetIdCounter\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_assetId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_price\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_threadType\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_threadQuality\",\"type\":\"string\"}],\"name\":\"createThread\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_assetId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_price\",\"type\":\"uint256\"}],\"name\":\"distributeThread\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"fabricDetailsById\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"rawMaterial\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"threadType\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"threadQuality\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"dyeType\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"pattern\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"origin\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"fabricType\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_assetId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_price\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"_dyeType\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"_pattern\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_origin\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"_fabricType\",\"type\":\"uint8\"}],\"name\":\"fabricWeaving\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"getActorAssets\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"internalType\":\"struct WeaveChain.ActorAsset[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"getActorRole\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"getRegisterStatus\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"payableAssetsById\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"trackerNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint8\",\"name\":\"state\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"internalType\":\"address payable\",\"name\":\"recentOwner\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_assetId\",\"type\":\"uint256\"}],\"name\":\"purchaseAsset\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"_role\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"_place\",\"type\":\"string\"}],\"name\":\"registerActor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_assetId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_price\",\"type\":\"uint256\"}],\"name\":\"sellFabric\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"name\":\"tracerAssets\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"state\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"actorAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"buyStatus\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/WeaveChain.sol\":\"WeaveChain\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/WeaveChain.sol\":{\"keccak256\":\"0xaa37e91d2d4f51488b837c6681f7ce571cdcea31fd8b67c6722d5d51afd6c0ec\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://b2961bab58c46f3c2eac27a36d464bc9adf06a64492abfbfa23ad6502885b52b\",\"dweb:/ipfs/QmeifyBe1MysZtuxhdR77XYzghnv5eJgnijCf6Mq8wUVMk\"]}},\"version\":1}",
@@ -23539,9 +23566,7 @@
   "ast": {
     "absolutePath": "project:/contracts/WeaveChain.sol",
     "exportedSymbols": {
-      "WeaveChain": [
-        1335
-      ]
+      "WeaveChain": [1335]
     },
     "id": 1336,
     "license": "GPL-3.0",
@@ -23549,15 +23574,7 @@
     "nodes": [
       {
         "id": 1,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.8",
-          ".2",
-          "<",
-          "0.9",
-          ".0"
-        ],
+        "literals": ["solidity", ">=", "0.8", ".2", "<", "0.9", ".0"],
         "nodeType": "PragmaDirective",
         "src": "37:31:0"
       },
@@ -23569,9 +23586,7 @@
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 1335,
-        "linearizedBaseContracts": [
-          1335
-        ],
+        "linearizedBaseContracts": [1335],
         "name": "WeaveChain",
         "nameLocation": "81:10:0",
         "nodeType": "ContractDefinition",
@@ -23922,10 +23937,7 @@
                       "id": 20,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "349:7:0",
                       "typeDescriptions": {
@@ -24112,10 +24124,7 @@
                       "id": 34,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "475:7:0",
                       "typeDescriptions": {
@@ -24302,10 +24311,7 @@
                       "id": 48,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "603:7:0",
                       "typeDescriptions": {
@@ -24492,10 +24498,7 @@
                       "id": 62,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "722:7:0",
                       "typeDescriptions": {
@@ -25299,9 +25302,7 @@
                 "pathNode": {
                   "id": 129,
                   "name": "Actor",
-                  "nameLocations": [
-                    "1681:5:0"
-                  ],
+                  "nameLocations": ["1681:5:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 85,
                   "src": "1681:5:0"
@@ -25360,9 +25361,7 @@
                 "pathNode": {
                   "id": 134,
                   "name": "Actor",
-                  "nameLocations": [
-                    "1736:5:0"
-                  ],
+                  "nameLocations": ["1736:5:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 85,
                   "src": "1736:5:0"
@@ -25422,9 +25421,7 @@
                   "pathNode": {
                     "id": 139,
                     "name": "ActorAsset",
-                    "nameLocations": [
-                      "1786:10:0"
-                    ],
+                    "nameLocations": ["1786:10:0"],
                     "nodeType": "IdentifierPath",
                     "referencedDeclaration": 90,
                     "src": "1786:10:0"
@@ -25491,9 +25488,7 @@
                 "pathNode": {
                   "id": 145,
                   "name": "AssetPayable",
-                  "nameLocations": [
-                    "1853:12:0"
-                  ],
+                  "nameLocations": ["1853:12:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 99,
                   "src": "1853:12:0"
@@ -25574,9 +25569,7 @@
                   "pathNode": {
                     "id": 151,
                     "name": "AssetTracer",
-                    "nameLocations": [
-                      "1934:11:0"
-                    ],
+                    "nameLocations": ["1934:11:0"],
                     "nodeType": "IdentifierPath",
                     "referencedDeclaration": 110,
                     "src": "1934:11:0"
@@ -25636,9 +25629,7 @@
                 "pathNode": {
                   "id": 157,
                   "name": "FabricDetail",
-                  "nameLocations": [
-                    "2039:12:0"
-                  ],
+                  "nameLocations": ["2039:12:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 127,
                   "src": "2039:12:0"
@@ -26953,9 +26944,7 @@
                       "pathNode": {
                         "id": 256,
                         "name": "ActorAsset",
-                        "nameLocations": [
-                          "3292:10:0"
-                        ],
+                        "nameLocations": ["3292:10:0"],
                         "nodeType": "IdentifierPath",
                         "referencedDeclaration": 90,
                         "src": "3292:10:0"
@@ -27132,10 +27121,7 @@
                       "id": 277,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "3584:7:0",
                       "typeDescriptions": {
@@ -27303,10 +27289,7 @@
                       "id": 288,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "3649:7:0",
                       "typeDescriptions": {
@@ -27414,10 +27397,7 @@
                       "id": 299,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "3716:7:0",
                       "typeDescriptions": {
@@ -27525,10 +27505,7 @@
                       "id": 306,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "3768:7:0",
                       "typeDescriptions": {
@@ -27654,10 +27631,7 @@
                       "id": 313,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "3844:7:0",
                       "typeDescriptions": {
@@ -28417,10 +28391,7 @@
                       "id": 367,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "4633:7:0",
                       "typeDescriptions": {
@@ -28588,10 +28559,7 @@
                       "id": 374,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "4701:7:0",
                       "typeDescriptions": {
@@ -28620,9 +28588,7 @@
                   "src": "4701:69:0"
                 },
                 {
-                  "assignments": [
-                    386
-                  ],
+                  "assignments": [386],
                   "declarations": [
                     {
                       "constant": false,
@@ -28673,9 +28639,7 @@
                   "src": "4781:20:0"
                 },
                 {
-                  "assignments": [
-                    390
-                  ],
+                  "assignments": [390],
                   "declarations": [
                     {
                       "constant": false,
@@ -28737,9 +28701,7 @@
                   "src": "4841:29:0"
                 },
                 {
-                  "assignments": [
-                    395
-                  ],
+                  "assignments": [395],
                   "declarations": [
                     {
                       "constant": false,
@@ -29089,9 +29051,7 @@
                   "src": "5129:24:0"
                 },
                 {
-                  "assignments": [
-                    420
-                  ],
+                  "assignments": [420],
                   "declarations": [
                     {
                       "constant": false,
@@ -29153,9 +29113,7 @@
                   "src": "5198:30:0"
                 },
                 {
-                  "assignments": [
-                    425
-                  ],
+                  "assignments": [425],
                   "declarations": [
                     {
                       "constant": false,
@@ -30073,9 +30031,7 @@
                 "modifierName": {
                   "id": 364,
                   "name": "onlyTM",
-                  "nameLocations": [
-                    "4615:6:0"
-                  ],
+                  "nameLocations": ["4615:6:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 32,
                   "src": "4615:6:0"
@@ -30287,10 +30243,7 @@
                       "id": 503,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "6182:7:0",
                       "typeDescriptions": {
@@ -30432,10 +30385,7 @@
                       "id": 513,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "6315:7:0",
                       "typeDescriptions": {
@@ -30543,10 +30493,7 @@
                       "id": 522,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "6464:7:0",
                       "typeDescriptions": {
@@ -30575,9 +30522,7 @@
                   "src": "6464:57:0"
                 },
                 {
-                  "assignments": [
-                    530
-                  ],
+                  "assignments": [530],
                   "declarations": [
                     {
                       "constant": false,
@@ -31107,9 +31052,7 @@
                   "src": "6784:212:0"
                 },
                 {
-                  "assignments": [
-                    570
-                  ],
+                  "assignments": [570],
                   "declarations": [
                     {
                       "constant": false,
@@ -31171,9 +31114,7 @@
                   "src": "7007:30:0"
                 },
                 {
-                  "assignments": [
-                    575
-                  ],
+                  "assignments": [575],
                   "declarations": [
                     {
                       "constant": false,
@@ -32287,9 +32228,7 @@
                 "modifierName": {
                   "id": 500,
                   "name": "onlyTM",
-                  "nameLocations": [
-                    "6164:6:0"
-                  ],
+                  "nameLocations": ["6164:6:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 32,
                   "src": "6164:6:0"
@@ -32555,10 +32494,7 @@
                       "id": 663,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "8206:7:0",
                       "typeDescriptions": {
@@ -32700,10 +32636,7 @@
                       "id": 673,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "8339:7:0",
                       "typeDescriptions": {
@@ -32811,10 +32744,7 @@
                       "id": 682,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "8488:7:0",
                       "typeDescriptions": {
@@ -32843,9 +32773,7 @@
                   "src": "8488:57:0"
                 },
                 {
-                  "assignments": [
-                    690
-                  ],
+                  "assignments": [690],
                   "declarations": [
                     {
                       "constant": false,
@@ -33375,9 +33303,7 @@
                   "src": "8717:212:0"
                 },
                 {
-                  "assignments": [
-                    730
-                  ],
+                  "assignments": [730],
                   "declarations": [
                     {
                       "constant": false,
@@ -33439,9 +33365,7 @@
                   "src": "8940:30:0"
                 },
                 {
-                  "assignments": [
-                    735
-                  ],
+                  "assignments": [735],
                   "declarations": [
                     {
                       "constant": false,
@@ -34092,9 +34016,7 @@
                 "modifierName": {
                   "id": 660,
                   "name": "onlyTD",
-                  "nameLocations": [
-                    "8188:6:0"
-                  ],
+                  "nameLocations": ["8188:6:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 46,
                   "src": "8188:6:0"
@@ -34306,10 +34228,7 @@
                       "id": 798,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "9785:7:0",
                       "typeDescriptions": {
@@ -34451,10 +34370,7 @@
                       "id": 808,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "9918:7:0",
                       "typeDescriptions": {
@@ -34562,10 +34478,7 @@
                       "id": 817,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "10067:7:0",
                       "typeDescriptions": {
@@ -34594,9 +34507,7 @@
                   "src": "10067:57:0"
                 },
                 {
-                  "assignments": [
-                    825
-                  ],
+                  "assignments": [825],
                   "declarations": [
                     {
                       "constant": false,
@@ -35126,9 +35037,7 @@
                   "src": "10296:212:0"
                 },
                 {
-                  "assignments": [
-                    865
-                  ],
+                  "assignments": [865],
                   "declarations": [
                     {
                       "constant": false,
@@ -35190,9 +35099,7 @@
                   "src": "10519:30:0"
                 },
                 {
-                  "assignments": [
-                    870
-                  ],
+                  "assignments": [870],
                   "declarations": [
                     {
                       "constant": false,
@@ -36224,9 +36131,7 @@
                 "modifierName": {
                   "id": 795,
                   "name": "onlyWeaver",
-                  "nameLocations": [
-                    "9763:10:0"
-                  ],
+                  "nameLocations": ["9763:10:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 60,
                   "src": "9763:10:0"
@@ -36546,10 +36451,7 @@
                       "id": 952,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "11657:7:0",
                       "typeDescriptions": {
@@ -36691,10 +36593,7 @@
                       "id": 962,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "11790:7:0",
                       "typeDescriptions": {
@@ -36802,10 +36701,7 @@
                       "id": 971,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "11939:7:0",
                       "typeDescriptions": {
@@ -36834,9 +36730,7 @@
                   "src": "11939:57:0"
                 },
                 {
-                  "assignments": [
-                    979
-                  ],
+                  "assignments": [979],
                   "declarations": [
                     {
                       "constant": false,
@@ -37366,9 +37260,7 @@
                   "src": "12168:212:0"
                 },
                 {
-                  "assignments": [
-                    1019
-                  ],
+                  "assignments": [1019],
                   "declarations": [
                     {
                       "constant": false,
@@ -37430,9 +37322,7 @@
                   "src": "12391:30:0"
                 },
                 {
-                  "assignments": [
-                    1024
-                  ],
+                  "assignments": [1024],
                   "declarations": [
                     {
                       "constant": false,
@@ -38083,9 +37973,7 @@
                 "modifierName": {
                   "id": 949,
                   "name": "onlyRetailer",
-                  "nameLocations": [
-                    "11633:12:0"
-                  ],
+                  "nameLocations": ["11633:12:0"],
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 74,
                   "src": "11633:12:0"
@@ -38316,10 +38204,7 @@
                       "id": 1075,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "13121:7:0",
                       "typeDescriptions": {
@@ -38479,10 +38364,7 @@
                       "id": 1086,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "13245:7:0",
                       "typeDescriptions": {
@@ -38708,10 +38590,7 @@
                       "id": 1097,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "13382:7:0",
                       "typeDescriptions": {
@@ -39130,9 +39009,7 @@
                   "src": "13642:259:0"
                 },
                 {
-                  "assignments": [
-                    1143
-                  ],
+                  "assignments": [1143],
                   "declarations": [
                     {
                       "constant": false,
@@ -39194,9 +39071,7 @@
                   "src": "13914:30:0"
                 },
                 {
-                  "assignments": [
-                    1148
-                  ],
+                  "assignments": [1148],
                   "declarations": [
                     {
                       "constant": false,
@@ -40611,9 +40486,7 @@
               "src": "15336:251:0",
               "statements": [
                 {
-                  "assignments": [
-                    1259
-                  ],
+                  "assignments": [1259],
                   "declarations": [
                     {
                       "constant": false,
@@ -40637,9 +40510,7 @@
                           "pathNode": {
                             "id": 1256,
                             "name": "ActorAsset",
-                            "nameLocations": [
-                              "15347:10:0"
-                            ],
+                            "nameLocations": ["15347:10:0"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 90,
                             "src": "15347:10:0"
@@ -40887,9 +40758,7 @@
                   },
                   "id": 1286,
                   "initializationExpression": {
-                    "assignments": [
-                      1265
-                    ],
+                    "assignments": [1265],
                     "declarations": [
                       {
                         "constant": false,
@@ -41114,9 +40983,7 @@
               "src": "15660:256:0",
               "statements": [
                 {
-                  "assignments": [
-                    1301
-                  ],
+                  "assignments": [1301],
                   "declarations": [
                     {
                       "constant": false,
@@ -41140,9 +41007,7 @@
                           "pathNode": {
                             "id": 1298,
                             "name": "ActorAsset",
-                            "nameLocations": [
-                              "15671:10:0"
-                            ],
+                            "nameLocations": ["15671:10:0"],
                             "nodeType": "IdentifierPath",
                             "referencedDeclaration": 90,
                             "src": "15671:10:0"
@@ -41430,9 +41295,7 @@
                   },
                   "id": 1332,
                   "initializationExpression": {
-                    "assignments": [
-                      1307
-                    ],
+                    "assignments": [1307],
                     "declarations": [
                       {
                         "constant": false,

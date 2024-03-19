@@ -146,7 +146,7 @@ const TraceProduct = () => {
           <button
             disabled={loading}
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white py-2 ml-4 px-4 rounded"
+            className="bg-blue-600 hover:bg-blue-700 text-white py-2 ml-4 px-4 rounded"
           >
             {loading ? "Searching..." : "Search"}
           </button>
@@ -159,34 +159,34 @@ const TraceProduct = () => {
           <div className="text-center">
             <button
               disabled={true}
-              className="bg-yellow-300 text-black py-2 px-4 rounded"
+              className="bg-yellow-300 text-white py-2 px-4 rounded"
             >
               Asset with ID <strong>{IdAsset}</strong> has not been created.
             </button>
           </div>
         ))}
-      <div className="bg-gray-50 rounded-lg shadow-lg shadow-gray-500 p-4 mx-12 mt-6 bg-opacity-40">
-        <h1 className="text-center text-lg text-black mb-2">
+      <div className="border border-white text-white rounded-lg shadow-lg  p-4 mx-12 mt-6 bg-opacity-40">
+        <h1 className="text-center text-2xl font-bold text-white mb-5 mt-3">
           Product Information
         </h1>
         <div className="flex justify-between -mx-6">
           <div className="w-4/12 px-6 border-r h-full border-gray-300">
-            <h1 className="text-sm text-gray-600">ID</h1>
+            <h1 className="text-sm text-white">ID</h1>
             {loading ? (
               "..."
             ) : (
-              <p className="text-lg text-black">
+              <p className="text-lg text-white">
                 <strong>
                   {fabricDetails.id == "0" ? "-" : fabricDetails.id}
                 </strong>
               </p>
             )}
             <div className="border-t border-gray-300 my-4"></div>
-            <h1 className="text-sm text-gray-600">Thread Type</h1>
+            <h1 className="text-sm text-white">Thread Type</h1>
             {loading ? (
               "..."
             ) : (
-              <p className="text-lg text-black">
+              <p className="text-lg text-white">
                 <strong>
                   {fabricDetails.threadType == ""
                     ? "-"
@@ -195,11 +195,11 @@ const TraceProduct = () => {
               </p>
             )}
             <div className="border-t border-gray-300 my-4"></div>
-            <h1 className="text-sm text-gray-600">Pattern</h1>
+            <h1 className="text-sm text-white">Pattern</h1>
             {loading ? (
               "..."
             ) : (
-              <p className="text-lg text-black">
+              <p className="text-lg text-white">
                 <strong>
                   {fabricDetails.pattern == "" ? "-" : fabricDetails.pattern}
                 </strong>
@@ -207,11 +207,11 @@ const TraceProduct = () => {
             )}
           </div>
           <div className="w-4/12 px-6 border-r h-full border-gray-300">
-            <h1 className="text-sm text-gray-600">Thread Raw Material</h1>
+            <h1 className="text-sm text-white">Thread Raw Material</h1>
             {loading ? (
               "..."
             ) : (
-              <p className="text-lg text-black">
+              <p className="text-lg text-white">
                 <strong>
                   {fabricDetails.rawMaterial == ""
                     ? "-"
@@ -220,11 +220,11 @@ const TraceProduct = () => {
               </p>
             )}
             <div className="border-t border-gray-300 my-4"></div>
-            <h1 className="text-sm text-gray-600">Dye Type</h1>
+            <h1 className="text-sm text-white">Dye Type</h1>
             {loading ? (
               "..."
             ) : (
-              <p className="text-lg text-black">
+              <p className="text-lg text-white">
                 <strong>
                   {fabricDetails.dyeType == "0"
                     ? "-"
@@ -233,11 +233,11 @@ const TraceProduct = () => {
               </p>
             )}
             <div className="border-t border-gray-300 my-4"></div>
-            <h1 className="text-sm text-gray-600">Fabric Type</h1>
+            <h1 className="text-sm text-white">Fabric Type</h1>
             {loading ? (
               "..."
             ) : (
-              <p className="text-lg text-black">
+              <p className="text-lg text-white">
                 <strong>
                   {fabricDetails.fabricType == "0"
                     ? "-"
@@ -247,11 +247,11 @@ const TraceProduct = () => {
             )}
           </div>
           <div className="w-4/12 px-6">
-            <h1 className="text-sm text-gray-600">Thread Quaility</h1>
+            <h1 className="text-sm text-white">Thread Quaility</h1>
             {loading ? (
               "..."
             ) : (
-              <p className="text-lg text-black">
+              <p className="text-lg text-white">
                 <strong>
                   {fabricDetails.threadQuality == ""
                     ? "-"
@@ -260,11 +260,11 @@ const TraceProduct = () => {
               </p>
             )}
             <div className="border-t border-gray-300 my-4"></div>
-            <h1 className="text-sm text-gray-600">Origin</h1>
+            <h1 className="text-sm text-white">Origin</h1>
             {loading ? (
               "..."
             ) : (
-              <p className="text-lg text-black">
+              <p className="text-lg text-white">
                 <strong>
                   {fabricDetails.origin == "" ? "-" : fabricDetails.origin}
                 </strong>
@@ -273,43 +273,42 @@ const TraceProduct = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-50 rounded-lg shadow-lg shadow-gray-500 p-4 mx-12 mt-10 bg-opacity-40">
+      <div className="border border-white rounded-lg  p-4 mx-12 mt-10 bg-opacity-40">
         <div className="w-full">
-          <h1 className="text-center text-lg text-black mb-2">
+          <h1 className="text-center text-2xl font-bold text-white mb-5 mt-3">
             Asset Process History
           </h1>
-          <table className="table-auto w-full text-left mb-6">
-            <thead className="bg-gray-200 border-b border-gray-200">
+          <table className="table-auto w-full text-left mb-6 ">
+            <thead className="bg-blue-600 border border-white ">
               <tr className="border-b-2 border-gray-200">
-                <th className="px-4 py-2 font-medium text-gray-900">Price</th>
-                <th className="px-4 py-2 font-medium text-gray-900">
+                <th className="px-4 py-2 font-medium text-white">Price</th>
+                <th className="px-4 py-2 font-medium text-white">
                   [No. State] State
                 </th>
-                <th className="px-4 py-2 font-medium text-gray-900">
+                <th className="px-4 py-2 font-medium text-white">
                   ETH Address
                 </th>
                 {moreDetails && (
                   <React.Fragment>
-                    <th className="px-4 py-2 font-medium text-gray-900">
-                      Name
-                    </th>
-                    <th className="px-4 py-2 font-medium text-gray-900">
-                      Role
-                    </th>
-                    <th className="px-4 py-2 font-medium text-gray-900">
+                    <th className="px-4 py-2 font-medium text-white">Name</th>
+                    <th className="px-4 py-2 font-medium text-white">Role</th>
+                    <th className="px-4 py-2 font-medium text-white">
                       User Address
                     </th>
                   </React.Fragment>
                 )}
-                <th className="px-4 py-2 font-medium text-gray-900">Date</th>
+                <th className="px-4 py-2 font-medium text-white">Date</th>
               </tr>
             </thead>
             <tbody>
               {loading ? (
-                <div className="text-slate-700 mt-2">Loading...</div>
+                <div className="text-white mt-2">Loading...</div>
               ) : (
                 assetHistory.map((history, index) => (
-                  <tr key={index} className="hover:bg-gray-100">
+                  <tr
+                    key={index}
+                    className="text-white font-light hover:bg-blue-300"
+                  >
                     {history.name && (
                       <>
                         <td className="border px-4 py-2">

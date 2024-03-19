@@ -11,5 +11,9 @@ export default {
             display: ['Lexend']
         },
     },
+    daisyui: {
+        themes: [],
+    },
     plugins: [require("daisyui")],
+
 }

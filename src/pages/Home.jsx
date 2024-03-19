@@ -21,46 +21,48 @@ const Home = () => {
             </p>
             <a
               href="/public-tracer"
-              className="px-4 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-300"
+              className="px-4 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-800 hover:text-white transition-colors duration-300"
             >
-              Buktikan
+              Prove it
             </a>
           </div>
           <div className="w-1/2">
-            <img src="hero-weave.png" alt="Illustration" className="w-3/5 " />
+            <img src="hero-weave.png" alt="Illustration" className="w-4/5 " />
           </div>
         </section>
 
-        <div className="grid grid-cols-12 px-10 gap-4 mt-12 py-10 bg-[#040C28]">
-          <div className="col-span-8 bg-blue-400 h-32 text-white">
-            <h3>Blockchain Integration</h3>
-            <p>
+        <div className="grid grid-cols-12 px-32 gap-4 mt-12 py-16 bg-[#040C28]">
+          <div className="col-span-8 bg-blue-400 h-48 flex flex-col justify-center text-white p-5 rounded-md">
+            <h3 className="font-bold text-2xl mb-2">Blockchain Integration</h3>
+            <p className="w-3/4">
               Utilize the power of blockchain to create an unforgeable and
               transparent ledger for your supply chain documents.
             </p>
           </div>
-          <div className="col-span-4 bg-red-400 h-32 text-white">
+          <div className="col-span-4 bg-red-400 h-48 flex flex-col justify-center text-white p-5 rounded-md">
             {" "}
-            <h3>Seamless Collaboration</h3>
+            <h3 className="font-bold text-2xl mb-2">Seamless Collaboration</h3>
             <p>
               Connect seamlessly with stakeholders across the supply chain,
               fostering real-time collaboration and information sharing.
             </p>
           </div>
-          <div className="col-span-4 bg-blue-400 h-32 text-white">
-            <h3>Efficiency Boost and Enhanced Security</h3>
+          <div className="col-span-4 bg-blue-400 h-48 flex flex-col justify-center text-white p-5 rounded-md">
+            <h3 className="font-bold text-2xl mb-2">Traceability</h3>
             <p>
+              Gain unparalleled visibility into your supply chain processes,
+              allowing for quick and accurate traceability
+            </p>
+          </div>
+          <div className="col-span-8 bg-red-400 h-48 flex flex-col justify-center text-white p-5 rounded-md">
+            <h3 className="font-bold text-2xl mb-2">
+              Efficiency Boost and Enhanced Security
+            </h3>
+            <p className="w-3/4">
               Rest easy knowing that your documentation is safeguarded against
               tampering, fraud, and unauthorized access. Experience a
               significant reduction in paperwork, errors, and delays, propelling
               your business towards new heights of efficiency.
-            </p>
-          </div>
-          <div className="col-span-8 bg-red-400 h-32 text-white">
-            <h3>Traceability</h3>
-            <p>
-              Gain unparalleled visibility into your supply chain processes,
-              allowing for quick and accurate traceability
             </p>
           </div>
         </div>
@@ -78,9 +80,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="px-10 mt-12 py-10 bg-[#040C28] grid grid-cols-12 gap-5 text-white">
+        <div className="px-10 mt-12 py-16 bg-[#040C28] grid grid-cols-12 gap-5 text-white">
           <div className="col-span-4">
-            <h3 className="font-display text-4xl uppercase font-bold">
+            <h3 className="font-display text-4xl uppercase font-bold mb-4">
               Frequently ask question
             </h3>
             <p>
@@ -119,16 +121,16 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="mt-16 mx-20">
-          <div className="bg-gradient-to-r from-[#8501FF] to-[#D901FF] text-center text-white py-10">
-            <h3 className="uppercase font-display  text-4xl">
+        <div className="my-10 mx-20">
+          <div className="bg-gradient-to-r from-[#8501FF] to-[#D901FF] text-center text-white py-10 rounded-2xl">
+            <h3 className="uppercase font-display  text-4xl mb-3">
               TRACE YOUR AUTHENTICATED WEAVE!
             </h3>
-            <p>
+            <p className="mb-5">
               Where Results are Authenticated and Traced in Supply Chain
               Excellence
             </p>
-            <button className="px-5 py-3 border border-white hover:bg-blue-500">
+            <button className="rounded-xl px-5 py-3 border border-white hover:bg-blue-500">
               Prove It!
             </button>
           </div>

@@ -9,8 +9,8 @@ const PublicTraceProduct = () => {
   const currentURL = window.location.href;
   console.log(currentURL);
   return (
-    <div className="bg-gradient-to-r from-blue-400 to-purple-500 min-h-screen">
-      <div className="px-8 py-6 max-w-full mx-auto">
+    <div className="bg-[#091233] min-h-screen">
+      <div className="py-6 max-w-full mx-auto">
         <PublicNavbar />
         {/* <button
           className="bg-blue-500 py-3 px-5"
