@@ -31,8 +31,8 @@ const TraceProduct = () => {
 
     if (!actorName) {
       return (
-        <div className="h-screen flex flex-col justify-center items-center">
-          <h1 className="text-3xl font-bold mb-8">
+        <div className="flex flex-col items-center justify-center h-screen">
+          <h1 className="mb-8 text-3xl font-bold">
             Your address is not registered!
           </h1>
         </div>
@@ -41,10 +41,9 @@ const TraceProduct = () => {
 
     return (
       <>
-        <ActorNavbar />
-        <div className="px-8 py-6 max-w-full mx-auto">
-          <h1 className="text-2xl font-bold mb-4 text-gray-900">Trace Asset</h1>
-          <div className="bg-white rounded-lg shadow-lg p-4">
+        <div className="max-w-full px-8 py-6 mx-auto">
+          <h1 className="mb-4 text-2xl font-bold text-gray-900">Trace Asset</h1>
+          <div className="p-4 bg-white rounded-lg shadow-lg">
             <TraceProductComponent />
           </div>
         </div>
@@ -52,7 +51,11 @@ const TraceProduct = () => {
     );
   };
 
-  return <div className="bg-gray-100 min-h-screen">{renderContent()}</div>;
+  return (
+    <ActorNavbar>
+      <div className="w-full min-h-screen bg-gray-50">{renderContent()}</div>
+    </ActorNavbar>
+  );
 };
 
 export default TraceProduct;

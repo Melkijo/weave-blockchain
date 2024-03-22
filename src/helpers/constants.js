@@ -1,9 +1,9 @@
 /* This file include constant objects */
 
 export const rolesName = {
-    1: "Produsen Benang",
-    2: "Distributor Benang",
-    3: "Pengrajin Tenun",
+    1: "Thread Manufacturer",
+    2: "Thread Distributor",
+    3: "Weaver",
     4: "Retailer",
     5: "Consumer",
 };

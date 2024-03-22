@@ -158,7 +158,7 @@ const TraceProduct = () => {
             </button>
           </div>
         ))}
-      <h1 className="my-4 mb-2 text-lg font-bold text-center text-gray-600">
+      <h1 className="my-4 mb-4 text-2xl font-bold text-center text-gray-600">
         Product Information
       </h1>
       <div className="flex justify-between -mx-6">
@@ -198,7 +198,7 @@ const TraceProduct = () => {
             </p>
           )}
         </div>
-        <div className="w-4/12 h-full px-6 border-r border-gray-300">
+        <div className="w-4/12 h-full px-6 border-r border-gray-300 ">
           <h1 className="text-sm text-gray-600">Thread Raw Material</h1>
           {loading ? (
             "..."
@@ -238,7 +238,7 @@ const TraceProduct = () => {
             </p>
           )}
         </div>
-        <div className="w-4/12 px-6">
+        <div className="w-4/12 px-6 overflow-hidden text-ellipsis">
           <h1 className="text-sm text-gray-600">Thread Quaility</h1>
           {loading ? (
             "..."
@@ -317,14 +317,15 @@ const TraceProduct = () => {
                     <>
                       <td className="px-4 py-2 border">
                         {convertWeiToEth(history.price)} ETH
+                        <p></p>
                       </td>
                       <td className="px-4 py-2 border">
                         [{history.state}] {stateName[history.state]}
                       </td>
-                      <td className="px-4 py-2 border">
+                      <td className="px-4 py-2 border  overflow-hidden max-w-[150px] text-ellipsis">
                         <a
                           href={`https://sepolia.etherscan.io/address/${history.actor}`}
-                          className="hover:text-blue-500"
+                          className="text-blue-400 underline underline-offset-1"
                         >
                           {history.actor}
                         </a>
@@ -332,7 +333,7 @@ const TraceProduct = () => {
                       {moreDetails && (
                         <>
                           <td className="px-4 py-2 border">{history.name}</td>
-                          <td className="px-4 py-2 border">
+                          <td className="px-4 py-2 border overflow-hidden max-w-[200px] text-ellipsis">
                             <a
                               href={"ipfs://" + history.ipfs}
                               target="_blank"

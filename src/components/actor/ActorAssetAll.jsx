@@ -174,7 +174,7 @@ function ActorAssetAll() {
             </th>
             <th className="px-4 py-2 text-sm text-gray-600">Owner</th>
             <th className="px-4 py-2 text-sm text-gray-600">Date</th>
-            <th className="px-4 py-2 text-sm text-gray-600">Buy</th>
+            <th className="px-4 py-2 text-sm text-gray-600">Action</th>
           </tr>
         </thead>
         <tbody>
