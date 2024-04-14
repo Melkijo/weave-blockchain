@@ -223,9 +223,14 @@ function ActorAsset() {
                       </td>
                       <td className="px-4 py-3 border">
                         [{asset.state}] {stateName[asset.state]}
+                      </td>
+                      <td className="px-4 py-3 border">
+                        {new Date(asset.time * 1000).toLocaleString()}
+                      </td>
+                      <td className="px-4 py-3 border">
                         {asset.state == 1 && role == 1 && (
                           <button
-                            className="px-2 py-1 ml-6 text-white transition duration-200 bg-blue-500 rounded hover:bg-blue-600"
+                            className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
                             onClick={() => handleCreateThreadModal(asset.id)}
                           >
                             Process
@@ -233,7 +238,7 @@ function ActorAsset() {
                         )}
                         {asset.state == 2 && role == 2 && (
                           <button
-                            className="px-2 py-1 ml-6 text-white transition duration-200 bg-blue-500 rounded hover:bg-blue-600"
+                            className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
                             onClick={() =>
                               handleDistributeThreadModal(asset.id)
                             }
@@ -243,7 +248,7 @@ function ActorAsset() {
                         )}
                         {asset.state == 3 && role == 3 && (
                           <button
-                            className="px-2 py-1 ml-6 text-white transition duration-200 bg-blue-500 rounded hover:bg-blue-600"
+                            className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
                             onClick={() => handleFabricWeavingModal(asset.id)}
                           >
                             Process
@@ -251,19 +256,14 @@ function ActorAsset() {
                         )}
                         {asset.state == 4 && role == 4 && (
                           <button
-                            className="px-2 py-1 ml-6 text-white transition duration-200 bg-blue-500 rounded hover:bg-blue-600"
+                            className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
                             onClick={() => handleSellFabricModal(asset.id)}
                           >
                             Process
                           </button>
                         )}
-                      </td>
-                      <td className="px-4 py-3 border">
-                        {new Date(asset.time * 1000).toLocaleString()}
-                      </td>
-                      <td className="px-4 py-3 border">
                         <button
-                          className="btn btn-outline btn-accent"
+                          className="ms-3 btn btn-outline btn-accent"
                           onClick={() => handleQRCode(asset.id)}
                         >
                           Create QR

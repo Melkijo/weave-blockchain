@@ -7,57 +7,71 @@ import PublicGuides from "./pages/PublicGuides";
 import UserGuides from "./pages/UserGuides";
 import PublicTraceProduct from "./pages/PublicTraceProduct";
 import Home from "./pages/Home";
-
+import LoadingScreen from "./pages/LoadingScreen";
 import { Web3Provider } from "./components/Web3Provider";
-
+import { useEffect, useState } from "react";
+import PublicMarket from "./pages/PublicMarket";
+import React from "react";
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route
-        path="/dashboard"
-        element={
-          <Web3Provider>
-            <Dashboard />
-          </Web3Provider>
-        }
-      />
-      <Route
-        path="/market"
-        element={
-          <Web3Provider>
-            {" "}
-            <Market />
-          </Web3Provider>
-        }
-      />
-      <Route
-        path="/trace-product"
-        element={
-          <Web3Provider>
-            <TraceProduct />
-          </Web3Provider>
-        }
-      />
-      <Route
-        path="/register"
-        element={
-          <Web3Provider>
-            <Register />
-          </Web3Provider>
-        }
-      />
-      <Route
-        path="/public-tracer"
-        element={
-          <Web3Provider>
-            <PublicTraceProduct />
-          </Web3Provider>
-        }
-      />
-      <Route path="/public-guides" element={<PublicGuides />} />
-      <Route path="/user-guides" element={<UserGuides />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/public-market"
+          element={
+            <Web3Provider>
+              {" "}
+              <PublicMarket />
+            </Web3Provider>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <Web3Provider>
+              <Dashboard />
+            </Web3Provider>
+          }
+        />
+        <Route
+          path="/market"
+          element={
+            <Web3Provider>
+              {" "}
+              <Market />
+            </Web3Provider>
+          }
+        />
+        <Route
+          path="/trace-product"
+          element={
+            <Web3Provider>
+              <TraceProduct />
+            </Web3Provider>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Web3Provider>
+              <Register />
+            </Web3Provider>
+          }
+        />
+        <Route
+          path="/public-tracer"
+          element={
+            <Web3Provider>
+              <PublicTraceProduct />
+            </Web3Provider>
+          }
+        />
+        <Route path="/public-guides" element={<PublicGuides />} />
+        <Route path="/user-guides" element={<UserGuides />} />
+      </Routes>
+      {/* )} */}
+    </>
   );
 }
 
