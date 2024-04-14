@@ -3,14 +3,26 @@ import { describe, expect, it } from "vitest";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Register from "./Register";
+import { Web3Provider } from "../components/Web3Provider";
 
 describe("Register Page", () => {
-  it("should render loading screen", () => {
+  it("should correctly render after loading", async () => {
     render(
       <BrowserRouter>
-        <Register />
+        <Web3Provider>
+          <Register />
+        </Web3Provider>
       </BrowserRouter>
     );
-    expect(screen.getByText("Actor Register Page")).toBeInTheDocument();
+
+    // Wait for the loading to complete
+    await waitFor(() => {
+      expect(screen.getByTestId("registration-test")).toBeInTheDocument();
+    });
+
+    // Assert the text content of the element
+    expect(screen.getByTestId("registration-test")).toHaveTextContent(
+      "Actor Register Pag"
+    );
   });
 });

@@ -29,7 +29,7 @@ export const Web3Provider = ({ children }) => {
       setAccounts(connectedAccounts);
 
       const networkId = await web3Instance.eth.net.getId();
-      const supplyChainDeployedNetwork = SupplyChain.networks[networkId];
+
       const contract = "0x846D6aE4Ce9ceF9C03b6f165Ecc5CEaD6015dB92";
       const supplyChain = new web3Instance.eth.Contract(
         SupplyChain.abi,
