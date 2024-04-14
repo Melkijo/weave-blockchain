@@ -117,7 +117,7 @@ function ActorAsset() {
   };
 
   const handleQRCode = (assetId) => {
-    setQrCode(`http://localhost:5173/public-tracer?q=${assetId}`);
+    setQrCode(`https://weave-blockchain.vercel.app/public-tracer?q=${assetId}`);
     document.getElementById("my_modal_1").showModal();
   };
   const canvasRef = useRef(null);
