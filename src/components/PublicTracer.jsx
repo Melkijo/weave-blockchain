@@ -143,9 +143,9 @@ const TraceProduct = () => {
     <div>
       <form onSubmit={handleSearch} className="mx-12 mt-10">
         <div className="items-center mt-2 mb-6 rounded-md">
-          <h1 className="my-2 font-bold text-gray-50">Product ID</h1>
+          <h1 className="my-2 font-bold text-white">Product ID</h1>
           <input
-            className="w-1/3 px-4 py-2 border rounded shadow-lg bg-slate-100 focus:outline-none"
+            className="w-1/3 px-4 py-2 text-black border rounded shadow-lg bg-slate-100 focus:outline-none"
             type="text"
             name="assetId"
             value={searchQuery}
@@ -155,7 +155,7 @@ const TraceProduct = () => {
           <button
             disabled={loading}
             type="submit"
-            className="px-4 py-2 ml-4 text-white bg-blue-600 rounded hover:bg-blue-700"
+            className="px-4 py-2 ml-4 text-white bg-purple-400 rounded hover:bg-purple-500"
           >
             {loading ? "Searching..." : "Search"}
           </button>
@@ -166,16 +166,13 @@ const TraceProduct = () => {
           ""
         ) : (
           <div className="text-center">
-            <button
-              disabled={true}
-              className="px-4 py-2 text-white bg-yellow-300 rounded"
-            >
+            <button disabled={true} className="px-4 py-2 text-white rounded">
               Asset with ID <strong>{IdAsset}</strong> has not been created.
             </button>
           </div>
         ))}
-      <div className="flex gap-10 mx-12 mt-6">
-        <div className="rounded-md w-[600px] h-[350px] border border-white">
+      <div className="flex flex-col gap-10 mx-12 mt-6 md:flex-row">
+        <div className="rounded-md w-full md:w-[600px] h-[350px] border border-black">
           {loading ? (
             <div className="w-full h-full skeleton"></div>
           ) : assetHistory.length === 0 ? (
@@ -216,13 +213,13 @@ const TraceProduct = () => {
             </Carousel>
           )}
         </div>
-        <div className="flex-grow p-4 text-white border border-white rounded-lg shadow-lg bg-opacity-40">
+        <div className="flex-grow p-4 text-white border border-black rounded-lg shadow-lg ">
           <h1 className="mt-3 mb-5 text-2xl font-bold text-center text-white">
             Product Information
           </h1>
           <div className="flex justify-between -mx-6">
-            <div className="h-full px-6 border-r border-gray-300 ">
-              <h1 className="text-sm text-white">ID</h1>
+            <div className="h-full px-6 border-r border-black ">
+              <h1 className="text-base text-white">ID</h1>
               {loading ? (
                 "..."
               ) : (
@@ -232,8 +229,8 @@ const TraceProduct = () => {
                   </strong>
                 </p>
               )}
-              <div className="my-4 border-t border-gray-300"></div>
-              <h1 className="text-sm text-white">Thread Type</h1>
+              <div className="my-4 border-t border-black"></div>
+              <h1 className="text-base text-white">Thread Type</h1>
               {loading ? (
                 "..."
               ) : (
@@ -245,8 +242,8 @@ const TraceProduct = () => {
                   </strong>
                 </p>
               )}
-              <div className="my-4 border-t border-gray-300"></div>
-              <h1 className="text-sm text-white">Pattern</h1>
+              <div className="my-4 border-t border-black"></div>
+              <h1 className="text-base text-white">Pattern</h1>
               {loading ? (
                 "..."
               ) : (
@@ -257,8 +254,8 @@ const TraceProduct = () => {
                 </p>
               )}
             </div>
-            <div className="w-4/12 h-full px-6 border-r border-gray-300">
-              <h1 className="text-sm text-white">Thread Raw Material</h1>
+            <div className="w-4/12 h-full px-6 border-r border-black">
+              <h1 className="text-base text-white">Thread Raw Material</h1>
               {loading ? (
                 "..."
               ) : (
@@ -270,8 +267,8 @@ const TraceProduct = () => {
                   </strong>
                 </p>
               )}
-              <div className="my-4 border-t border-gray-300"></div>
-              <h1 className="text-sm text-white">Dye Type</h1>
+              <div className="my-4 border-t border-black"></div>
+              <h1 className="text-base text-white">Dye Type</h1>
               {loading ? (
                 "..."
               ) : (
@@ -283,8 +280,8 @@ const TraceProduct = () => {
                   </strong>
                 </p>
               )}
-              <div className="my-4 border-t border-gray-300"></div>
-              <h1 className="text-sm text-white">Fabric Type</h1>
+              <div className="my-4 border-t border-black"></div>
+              <h1 className="text-base text-white">Fabric Type</h1>
               {loading ? (
                 "..."
               ) : (
@@ -298,7 +295,7 @@ const TraceProduct = () => {
               )}
             </div>
             <div className="w-4/12 px-6 overflow-hidden text-ellipsis">
-              <h1 className="text-sm text-white">Thread Quaility</h1>
+              <h1 className="text-base text-white">Thread Quaility</h1>
               {loading ? (
                 "..."
               ) : (
@@ -310,8 +307,8 @@ const TraceProduct = () => {
                   </strong>
                 </p>
               )}
-              <div className="my-4 border-t border-gray-300"></div>
-              <h1 className="text-sm text-white">Origin</h1>
+              <div className="my-4 border-t border-black"></div>
+              <h1 className="text-base text-white">Origin</h1>
               {loading ? (
                 "..."
               ) : (
@@ -322,16 +319,16 @@ const TraceProduct = () => {
                 </p>
               )}
 
-              <div className="my-4 border-t border-gray-300"></div>
+              <div className="my-4 border-t border-black"></div>
 
-              <h1 className="text-sm text-white">Documentation</h1>
+              <h1 className="text-base text-white">Documentation</h1>
               {loading ? (
                 "..."
               ) : (
                 <a
                   href={"ipfs://" + fabricDetails.ipfs}
                   target="_blank"
-                  className="overflow-hidden text-blue-400 underline underline-offset-1 "
+                  className="overflow-hidden text-white underline underline-offset-1 "
                 >
                   {fabricDetails.ipfs == "" ? "-" : fabricDetails.ipfs}
                 </a>
@@ -341,34 +338,32 @@ const TraceProduct = () => {
         </div>
       </div>
 
-      <div className="p-4 mx-12 mt-10 border border-white rounded-lg bg-opacity-40">
+      <div className="p-4 mx-12 mt-10 border border-black rounded-lg bg-opacity-40">
         <div className="w-full">
           <h1 className="mt-3 mb-5 text-2xl font-bold text-center text-white">
             Asset Process History
           </h1>
           <table className="w-full mb-6 text-left table-auto ">
-            <thead className="bg-blue-600 border border-white ">
-              <tr className="border-b-2 border-gray-200">
-                <th className="px-4 py-2 font-medium text-white">Price</th>
-                <th className="px-4 py-2 font-medium text-white">
+            <thead className="bg-white border border-black ">
+              <tr className="border-b-2 border-black">
+                <th className="px-4 py-2 font-bold text-black">Price</th>
+                <th className="px-4 py-2 font-bold text-black">
                   [No. State] State
                 </th>
-                <th className="px-4 py-2 font-medium text-white">
-                  ETH Address
-                </th>
+                <th className="px-4 py-2 font-bold text-black">ETH Address</th>
                 {moreDetails && (
                   <React.Fragment>
-                    <th className="px-4 py-2 font-medium text-white">Name</th>
-                    <th className="px-4 py-2 font-medium text-white">
+                    <th className="px-4 py-2 font-bold text-black">Name</th>
+                    <th className="px-4 py-2 font-bold text-black">
                       Documentation
                     </th>
-                    <th className="px-4 py-2 font-medium text-white">Role</th>
-                    <th className="px-4 py-2 font-medium text-white">
+                    <th className="px-4 py-2 font-bold text-black">Role</th>
+                    <th className="px-4 py-2 font-bold text-black">
                       User Address
                     </th>
                   </React.Fragment>
                 )}
-                <th className="px-4 py-2 font-medium text-white">Date</th>
+                <th className="px-4 py-2 font-bold text-black">Date</th>
               </tr>
             </thead>
             <tbody>
@@ -382,49 +377,46 @@ const TraceProduct = () => {
                   )
                     return null;
                   return (
-                    <tr
-                      key={index}
-                      className="font-light text-white hover:bg-gray-800"
-                    >
+                    <tr key={index} className="font-medium text-white ">
                       {history.name && (
                         <>
-                          <td className="px-4 py-2 border ">
+                          <td className="px-4 py-2 border border-black">
                             {convertWeiToEth(history.price)} ETH
                           </td>
-                          <td className="px-4 py-2 border">
+                          <td className="px-4 py-2 border border-black">
                             {stateName[history.state]}
                           </td>
-                          <td className="px-4 py-2 border  overflow-hidden max-w-[200px] text-ellipsis">
+                          <td className="px-4 py-2 border border-black overflow-hidden max-w-[200px] text-ellipsis">
                             <a
                               href={`https://sepolia.etherscan.io/address/${history.actor}`}
-                              className="text-blue-400 underline underline-offset-1 "
+                              className="text-white underline underline-offset-1 "
                             >
                               {history.actor}
                             </a>
                           </td>
                           {moreDetails && (
                             <>
-                              <td className="px-4 py-2 border">
+                              <td className="px-4 py-2 border border-black">
                                 {history.name}
                               </td>
-                              <td className="px-4 py-2 border overflow-hidden max-w-[200px] text-ellipsis">
+                              <td className="px-4 py-2 border border-black overflow-hidden max-w-[200px] text-ellipsis">
                                 <a
                                   href={"ipfs://" + history.ipfs}
                                   target="_blank"
-                                  className="text-blue-400 underline underline-offset-1"
+                                  className="text-white underline underline-offset-1"
                                 >
                                   {history.ipfs}
                                 </a>
                               </td>
-                              <td className="px-4 py-2 border">
+                              <td className="px-4 py-2 border border-black">
                                 {rolesName[history.role]}
                               </td>
-                              <td className="px-4 py-2 border">
+                              <td className="px-4 py-2 border border-black">
                                 {history.place}
                               </td>
                             </>
                           )}
-                          <td className="px-4 py-2 border">
+                          <td className="px-4 py-2 border border-black">
                             {new Date(history.date * 1000).toLocaleString()}
                           </td>
                         </>
@@ -438,7 +430,7 @@ const TraceProduct = () => {
           <div className="text-center">
             {moreDetails === false && (
               <button
-                className="px-4 py-2 mb-6 text-white transition duration-200 bg-blue-500 rounded hover:bg-blue-600"
+                className="hidden px-4 py-2 mb-6 text-white transition duration-200 bg-blue-500 rounded md:block hover:bg-blue-600"
                 onClick={() => handleMoreDetails()}
               >
                 More Details
@@ -454,27 +446,6 @@ const TraceProduct = () => {
             )}
           </div>
         </div>
-        {/* <div className="w-3/12 mx-4 ">
-                    <h1 className="my-2 font-bold text-center">Informasi Produk</h1>
-                    <div className="flex justify">
-                        <div className="pr-10 mb-4">
-                            <p>Product ID</p>
-                            <p>Raw Material</p>
-                            <p>Thread Type</p>
-                            <p>Fabric Type</p>
-                            <p>Dye Type</p>
-                            <p>Pattern</p>
-                        </div>
-                        <div className="mb-4">
-                            <p>: Product ID</p>
-                            <p>: Raw Material</p>
-                            <p>: Thread Type</p>
-                            <p>: Fabric Type</p>
-                            <p>: Dye Type</p>
-                            <p>: Pattern</p>
-                        </div>
-                    </div>
-                </div> */}
       </div>
     </div>
   );

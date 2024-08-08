@@ -6,7 +6,7 @@ import AppFooter from "../components/AppFooter";
 
 const PublicTraceProduct = () => {
   return (
-    <div className="bg-[#091233] min-h-screen">
+    <div className="bg-[#091233] min-h-screen text-white">
       <div className="max-w-full py-6 mx-auto">
         <PublicNavbar />
         <PublicTracer />

@@ -45,6 +45,7 @@ const PublicMarket = () => {
       <div className="max-w-full px-8 pt-5 mx-auto">
         {/* <h1 className="mb-4 text-4xl font-bold text-white">Market</h1> */}
         <div>
+          <h1>Hai</h1>
           <PublicAssetAll />
         </div>
       </div>

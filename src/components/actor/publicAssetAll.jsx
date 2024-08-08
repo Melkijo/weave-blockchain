@@ -116,12 +116,13 @@ function PublicAssetAll() {
   const filteredAssets = assets.filter((asset) => {
     if (filterBy === "All" && (asset.state == 4 || asset.state == 5))
       return true;
+    // if (filterBy === "All") return true;
     if (filterBy === "Buyable" && asset.state == 2 && role == 2) return true;
     if (filterBy === "Buyable" && asset.state == 3 && role == 3) return true;
     if (filterBy === "Buyable" && asset.state == 4 && role == 4) return true;
     if (filterBy === "Buyable" && asset.state == 5 && role == 5) return true;
-    // if (filterBy === "Retail" && (asset.state == 4 || asset.state == 5))
-    //   return true;
+    if (filterBy === "Retail" && (asset.state == 4 || asset.state == 5))
+      return true;
     return false;
   });
 
@@ -134,9 +135,9 @@ function PublicAssetAll() {
         <div>
           <h1 className="text-4xl font-bold text-white ">Market</h1>
         </div>
-        {/* <div>
+        <div>
           <div className="relative inline-block w-64 ">
-            <select
+            {/* <select
               className="block w-full px-4 py-2 pr-8 leading-tight bg-[#091233] text-white border border-white rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline"
               value={filterBy}
               onChange={(e) => setFilterBy(e.target.value)}
@@ -148,7 +149,7 @@ function PublicAssetAll() {
               <option value="Retail" className="my-2">
                 Retail
               </option>
-            </select>
+            </select> */}
             <div className="absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 pointer-events-none">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +165,7 @@ function PublicAssetAll() {
               </svg>
             </div>
           </div>
-        </div> */}
+        </div>
         <button
           className="py-2 text-white transition duration-200 bg-blue-500 rounded w-36 hover:bg-blue-600"
           onClick={handleReload}

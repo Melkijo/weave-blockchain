@@ -212,10 +212,12 @@ function ActorAssetAll() {
                       {asset.ipfs}
                     </a>
                   </td>
-                  <td className="px-4 py-3 border">
+                  <td className="px-4 py-3 border ">
                     [{asset.state}] {stateName[asset.state]}
                   </td>
-                  <td className="px-4 py-3 border">{asset.address}</td>
+                  <td className="px-4 py-3 overflow-hidden border max-w-[200px] text-ellipsis">
+                    {asset.address}
+                  </td>
                   <td className="px-4 py-3 border">
                     {new Date(asset.time * 1000).toLocaleDateString()}
                   </td>
