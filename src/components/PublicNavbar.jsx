@@ -44,7 +44,7 @@ const PublicNavbar = () => {
                   }`}
                   onClick={handleSubMenuToggle}
                 >
-                  Guide
+                  Panduan
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className={`h-5 w-5 inline-block transform ${
@@ -68,7 +68,7 @@ const PublicNavbar = () => {
                         isActive("/public-guides") && "text-black font-bold"
                       }`}
                     >
-                      Connect Web3
+                      Koneksi Web3
                     </Link>
                     <hr />
                     <Link
@@ -77,7 +77,7 @@ const PublicNavbar = () => {
                         isActive("/user-guides") && "text-black font-bold"
                       }`}
                     >
-                      User Guide
+                      Panduan pengguna
                     </Link>
                   </div>
                 )}
@@ -90,7 +90,7 @@ const PublicNavbar = () => {
                     : "hover:text-white"
                 }`}
               >
-                Market
+                Display
               </a>
               <a
                 href="/public-tracer"
@@ -100,14 +100,14 @@ const PublicNavbar = () => {
                     : "hover:text-white"
                 }`}
               >
-                Product Check
+                Pelacak produk
               </a>
             </div>
             <div
               className="block md:hidden"
               onClick={() => setShowMenu(!showMenu)}
             >
-              <button>Open</button>
+              <button>Menu</button>
             </div>
           </div>
           {showMenu === true ? (
@@ -121,7 +121,7 @@ const PublicNavbar = () => {
                   }`}
                   onClick={handleSubMenuToggle}
                 >
-                  Guide
+                  Panduan
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className={`h-5 w-5 inline-block transform ${
@@ -145,7 +145,7 @@ const PublicNavbar = () => {
                         isActive("/public-guides") && "text-black font-bold"
                       }`}
                     >
-                      Connect Web3
+                      Koneksi Web3
                     </Link>
                     <hr />
                     <Link
@@ -154,7 +154,7 @@ const PublicNavbar = () => {
                         isActive("/user-guides") && "text-black font-bold"
                       }`}
                     >
-                      User Guide
+                      Panduan pengguna
                     </Link>
                   </div>
                 )}
@@ -167,7 +167,7 @@ const PublicNavbar = () => {
                     : "hover:text-white"
                 }`}
               >
-                Market
+                Display
               </a>
               <a
                 href="/public-tracer"
@@ -177,14 +177,14 @@ const PublicNavbar = () => {
                     : "hover:text-white"
                 }`}
               >
-                Product Check
+                Pelacak produk
               </a>
               <div className="mr-3">
                 <button
                   className="px-8 py-2 text-white transition-colors duration-300 border-2 border-white rounded-full bg-none hover:bg-blue-800 hover:text-white"
                   onClick={handleSignInModal}
                 >
-                  Sign In
+                  Coba gratis
                 </button>
               </div>
             </div>
@@ -196,7 +196,7 @@ const PublicNavbar = () => {
             className="px-10 py-3 text-white transition-colors duration-300 border-2 border-white rounded-full bg-none hover:bg-blue-800 hover:text-white"
             onClick={handleSignInModal}
           >
-            Sign in
+            Coba gratis
           </button>
         </div>
       </div>
