@@ -41,9 +41,9 @@ const Market = () => {
 
     return (
       <>
-        <div className="max-w-full px-8 py-6 mx-auto">
+        <div className="max-w-full px-4 py-6 mx-auto md:px-8">
           <h1 className="mb-4 text-2xl font-bold text-gray-900">Market</h1>
-          <div className="p-4 bg-white rounded-lg shadow-lg">
+          <div className="p-2 bg-white rounded-lg shadow-lg md:p-4">
             <ActorAssetAll />
           </div>
         </div>

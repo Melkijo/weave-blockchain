@@ -355,7 +355,10 @@ const TraceProduct = () => {
                 <th className="hidden px-4 py-2 font-bold text-black md:block">
                   Alamat ETH
                 </th>
-                <th className="px-4 py-2 font-bold text-black ">Dokumentasi</th>
+                <th className="block px-4 py-2 font-bold text-black md:hidden">
+                  Lokasi
+                </th>
+
                 {moreDetails && (
                   <React.Fragment>
                     <th className="px-4 py-2 font-bold text-black">Nama</th>
@@ -389,7 +392,10 @@ const TraceProduct = () => {
                           <td className="px-2 py-2 text-sm border border-white md:px-4 md:text-base">
                             {stateName[history.state]}
                           </td>
-                          <td className="px-2 md:px-4 py-2 border border-white overflow-hidden max-w-[50px] md:max-w-[200px] text-ellipsis text-sm md:text-base">
+                          <td className="px-4 py-2 border border-white">
+                            {history.place}
+                          </td>
+                          <td className="hidden px-2 md:px-4 py-2 border border-white overflow-hidden max-w-[50px] md:max-w-[200px] text-ellipsis text-sm md:text-base">
                             <a
                               href={`https://sepolia.etherscan.io/address/${history.actor}`}
                               className="text-white underline underline-offset-1 "

@@ -107,7 +107,7 @@ const PublicNavbar = () => {
               className="block md:hidden"
               onClick={() => setShowMenu(!showMenu)}
             >
-              <button>Menu</button>
+              <button className="text-white">Menu</button>
             </div>
           </div>
           {showMenu === true ? (
