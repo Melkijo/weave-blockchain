@@ -165,20 +165,20 @@ function ActorAsset() {
               Nama aset
             </th>
 
-            <th className="hidden px-4 py-2 text-sm font-bold text-gray-600 md:grid">
+            <th className="hidden w-full px-4 py-2 text-sm font-bold text-gray-600 md:flex ">
               Gambar
             </th>
 
-            <th className="px-4 py-2 text-sm font-bold text-gray-600 ">
+            <th className="hidden w-full px-4 py-2 text-sm font-bold text-gray-600 md:flex ">
               <div className="hidden md:block">Harga</div>
             </th>
-            <th className="px-4 py-2 text-sm font-bold text-gray-600 ">
+            <th className="hidden w-full px-4 py-2 text-sm font-bold text-gray-600 md:flex ">
               [No. State] Status
             </th>
-            <th className="px-4 py-2 text-sm font-bold text-gray-600 ">
+            <th className="hidden w-full px-4 py-2 text-sm font-bold text-gray-600 md:flex ">
               Tanggal
             </th>
-            <th className="px-4 py-2 text-sm font-bold text-gray-600">aksi</th>
+            <th className="px-4 py-2 text-sm font-bold text-gray-600 ">aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -211,7 +211,7 @@ function ActorAsset() {
                           )}
                         </>
                       }
-                      <td className=" px-4 py-3 border overflow-hidden max-w-[200px] text-ellipsis">
+                      <td className="hidden md:flex w-full px-4 py-3 border overflow-hidden max-w-[200px] text-ellipsis">
                         <a
                           href={"ipfs://" + asset.ipfs}
                           target="_blank"
@@ -220,13 +220,13 @@ function ActorAsset() {
                           {asset.ipfs}
                         </a>
                       </td>
-                      <td className="px-4 py-3 border ">
+                      <td className="hidden w-full px-4 py-3 border md:flex ">
                         {convertWeiToEth(asset.price)} ETH
                       </td>
-                      <td className="px-4 py-3 border ">
+                      <td className="hidden w-full px-4 py-3 border md:flex ">
                         [{asset.state}] {stateName[asset.state]}
                       </td>
-                      <td className="px-4 py-3 border ">
+                      <td className="hidden w-full px-4 py-3 border md:flex ">
                         {new Date(asset.time * 1000).toLocaleString()}
                       </td>
                       <td className="px-4 py-3 border ">
