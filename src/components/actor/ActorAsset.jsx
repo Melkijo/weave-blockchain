@@ -162,20 +162,21 @@ function ActorAsset() {
           <tr className="border-b-2 border-gray-200">
             <th className="px-4 py-2 text-sm font-bold text-gray-600">ID</th>
             <th className="px-4 py-2 text-sm font-bold text-gray-600">
-              Asset Name
-            </th>
-            <th className="hidden px-4 py-2 text-sm font-bold text-gray-600 md:block">
-              Documentation
+              Nama aset
             </th>
 
-            <th className="hidden px-4 py-2 text-sm font-bold text-gray-600 md:block">
-              Price
+            <th className="hidden px-4 py-2 text-sm font-bold text-gray-600 md:grid">
+              Gambar
             </th>
-            <th className="hidden px-4 py-2 text-sm font-bold text-gray-600 md:block">
+
+            <th className="px-4 py-2 text-sm font-bold text-gray-600 ">
+              <div className="hidden md:block">Harga</div>
+            </th>
+            <th className="px-4 py-2 text-sm font-bold text-gray-600 ">
               [No. State] Status
             </th>
-            <th className="hidden px-4 py-2 text-sm font-bold text-gray-600 md:block">
-              Date
+            <th className="px-4 py-2 text-sm font-bold text-gray-600 ">
+              Tanggal
             </th>
             <th className="px-4 py-2 text-sm font-bold text-gray-600">aksi</th>
           </tr>
@@ -210,7 +211,7 @@ function ActorAsset() {
                           )}
                         </>
                       }
-                      <td className="hidden md:block px-4 py-3 border overflow-hidden max-w-[200px] text-ellipsis">
+                      <td className=" px-4 py-3 border overflow-hidden max-w-[200px] text-ellipsis">
                         <a
                           href={"ipfs://" + asset.ipfs}
                           target="_blank"
@@ -219,13 +220,13 @@ function ActorAsset() {
                           {asset.ipfs}
                         </a>
                       </td>
-                      <td className="hidden px-4 py-3 border md:block">
+                      <td className="px-4 py-3 border ">
                         {convertWeiToEth(asset.price)} ETH
                       </td>
-                      <td className="hidden px-4 py-3 border md:block">
+                      <td className="px-4 py-3 border ">
                         [{asset.state}] {stateName[asset.state]}
                       </td>
-                      <td className="hidden px-4 py-3 border md:block">
+                      <td className="px-4 py-3 border ">
                         {new Date(asset.time * 1000).toLocaleString()}
                       </td>
                       <td className="px-4 py-3 border ">

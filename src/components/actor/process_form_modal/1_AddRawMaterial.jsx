@@ -51,6 +51,7 @@ const AddRawMaterial = () => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("masuk");
     e.preventDefault();
     if (priceEth && rawMaterial) {
       const weiPrice = web3.utils.toWei(priceEth.toFixed(18), "ether");
@@ -146,7 +147,7 @@ const AddRawMaterial = () => {
             htmlFor="price"
             className="block mt-5 mb-2 font-medium text-gray-700"
           >
-            Harga (IDR)
+            Harga (IDR)x
           </label>
           <div className="relative rounded-md shadow-sm">
             <input
