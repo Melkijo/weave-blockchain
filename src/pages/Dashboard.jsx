@@ -54,7 +54,7 @@ const Dashboard = () => {
         <h1 className="mb-4 text-2xl font-bold text-gray-900">Dashboard</h1>
         <div className="p-4 bg-white rounded-lg shadow-lg">
           <h2 className="mb-2 text-sm text-center">
-            Welcome, {name} (<strong>{rolesName[role]}</strong>)
+            Selamat datang, {name} (<strong>{rolesName[role]}</strong>)
           </h2>
           {role == 1 && (
             <div className="flex justify-center">

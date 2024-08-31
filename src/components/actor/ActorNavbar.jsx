@@ -59,6 +59,9 @@ const ActorNavbar = (props) => {
   return (
     <>
       <div className="flex justify-end">
+        <a href="/" className="block mt-2 md:hidden">
+          <FaHome className="mr-2 hover:text-blue-500 " />
+        </a>
         <div className="hidden md:block">
           {isConnected ? (
             <div className="flex items-center pr-5 text-black">

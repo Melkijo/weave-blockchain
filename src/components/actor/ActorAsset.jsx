@@ -5,7 +5,6 @@ import DistributeThread from "./process_form_modal/3_DistributeThread";
 import FabricWeaving from "./process_form_modal/4_FabricWeaving";
 import SellFabric from "./process_form_modal/5_SellFabric";
 import { stateName, fabricTypeName } from "../../helpers/constants";
-// import QRCode from "react-qr-code";
 import QRCode from "qrcode";
 
 function ActorAsset() {
@@ -149,7 +148,7 @@ function ActorAsset() {
   return (
     <div>
       <div className="flex items-center justify-between my-4">
-        <h1 className="text-xl font-bold text-center">Your Assets</h1>
+        <h1 className="text-xl font-bold text-center">Produk</h1>
         <button
           className="py-2 text-white transition duration-200 bg-blue-500 rounded w-36 hover:bg-blue-600"
           onClick={handleReload}
@@ -165,18 +164,20 @@ function ActorAsset() {
             <th className="px-4 py-2 text-sm font-bold text-gray-600">
               Asset Name
             </th>
-            <th className="px-4 py-2 text-sm font-bold text-gray-600">
+            <th className="hidden px-4 py-2 text-sm font-bold text-gray-600 md:block">
               Documentation
             </th>
 
-            <th className="px-4 py-2 text-sm font-bold text-gray-600">Price</th>
-            <th className="px-4 py-2 text-sm font-bold text-gray-600">
+            <th className="hidden px-4 py-2 text-sm font-bold text-gray-600 md:block">
+              Price
+            </th>
+            <th className="hidden px-4 py-2 text-sm font-bold text-gray-600 md:block">
               [No. State] Status
             </th>
-            <th className="px-4 py-2 text-sm font-bold text-gray-600">Date</th>
-            <th className="px-4 py-2 text-sm font-bold text-gray-600">
-              Action
+            <th className="hidden px-4 py-2 text-sm font-bold text-gray-600 md:block">
+              Date
             </th>
+            <th className="px-4 py-2 text-sm font-bold text-gray-600">aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -197,19 +198,19 @@ function ActorAsset() {
                             </td>
                           )}
                           {(asset.state == 2 || asset.state == 3) && (
-                            <td className="px-4 py-3 border">
+                            <td className="px-4 py-3 border ">
                               {asset.threadType}
                             </td>
                           )}
                           {(asset.state == 4 || asset.state == 5) && (
-                            <td className="px-4 py-3 border">
+                            <td className="px-4 py-3 border ">
                               {fabricTypeName[asset.fabricType]} (
                               {asset.pattern})
                             </td>
                           )}
                         </>
                       }
-                      <td className="px-4 py-3 border overflow-hidden max-w-[200px] text-ellipsis">
+                      <td className="hidden md:block px-4 py-3 border overflow-hidden max-w-[200px] text-ellipsis">
                         <a
                           href={"ipfs://" + asset.ipfs}
                           target="_blank"
@@ -218,56 +219,58 @@ function ActorAsset() {
                           {asset.ipfs}
                         </a>
                       </td>
-                      <td className="px-4 py-3 border">
+                      <td className="hidden px-4 py-3 border md:block">
                         {convertWeiToEth(asset.price)} ETH
                       </td>
-                      <td className="px-4 py-3 border">
+                      <td className="hidden px-4 py-3 border md:block">
                         [{asset.state}] {stateName[asset.state]}
                       </td>
-                      <td className="px-4 py-3 border">
+                      <td className="hidden px-4 py-3 border md:block">
                         {new Date(asset.time * 1000).toLocaleString()}
                       </td>
-                      <td className="px-4 py-3 border">
-                        {asset.state == 1 && role == 1 && (
+                      <td className="px-4 py-3 border ">
+                        <div className="flex flex-col gap-2 md:flex-row">
+                          {asset.state == 1 && role == 1 && (
+                            <button
+                              className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
+                              onClick={() => handleCreateThreadModal(asset.id)}
+                            >
+                              Process
+                            </button>
+                          )}
+                          {asset.state == 2 && role == 2 && (
+                            <button
+                              className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
+                              onClick={() =>
+                                handleDistributeThreadModal(asset.id)
+                              }
+                            >
+                              Process
+                            </button>
+                          )}
+                          {asset.state == 3 && role == 3 && (
+                            <button
+                              className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
+                              onClick={() => handleFabricWeavingModal(asset.id)}
+                            >
+                              Process
+                            </button>
+                          )}
+                          {asset.state == 4 && role == 4 && (
+                            <button
+                              className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
+                              onClick={() => handleSellFabricModal(asset.id)}
+                            >
+                              Process
+                            </button>
+                          )}
                           <button
-                            className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
-                            onClick={() => handleCreateThreadModal(asset.id)}
+                            className="ms-3 btn btn-outline btn-accent"
+                            onClick={() => handleQRCode(asset.id)}
                           >
-                            Process
+                            Create QR
                           </button>
-                        )}
-                        {asset.state == 2 && role == 2 && (
-                          <button
-                            className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
-                            onClick={() =>
-                              handleDistributeThreadModal(asset.id)
-                            }
-                          >
-                            Process
-                          </button>
-                        )}
-                        {asset.state == 3 && role == 3 && (
-                          <button
-                            className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
-                            onClick={() => handleFabricWeavingModal(asset.id)}
-                          >
-                            Process
-                          </button>
-                        )}
-                        {asset.state == 4 && role == 4 && (
-                          <button
-                            className="text-white transition duration-200 bg-blue-500 rounded-md btn btn-primary hover:bg-blue-600"
-                            onClick={() => handleSellFabricModal(asset.id)}
-                          >
-                            Process
-                          </button>
-                        )}
-                        <button
-                          className="ms-3 btn btn-outline btn-accent"
-                          onClick={() => handleQRCode(asset.id)}
-                        >
-                          Create QR
-                        </button>
+                        </div>
                       </td>
                     </React.Fragment>
                   )}

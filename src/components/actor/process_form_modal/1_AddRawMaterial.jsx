@@ -120,14 +120,14 @@ const AddRawMaterial = () => {
     <div>
       <form onSubmit={handleSubmit} className="w-80">
         <h2 className="my-2 text-2xl font-bold text-center">
-          Add Asset (Thread Raw Material)
+          Tambah Aset (Bahan Baku Benang)
         </h2>
         <div className="mt-5">
           <label
             htmlFor="price"
             className="block mb-2 font-medium text-gray-700"
           >
-            Raw Material Name
+            Nama Bahan Baku
           </label>
           <div className="relative rounded-md shadow-sm">
             <input
@@ -146,7 +146,7 @@ const AddRawMaterial = () => {
             htmlFor="price"
             className="block mt-5 mb-2 font-medium text-gray-700"
           >
-            Price (IDR)
+            Harga (IDR)
           </label>
           <div className="relative rounded-md shadow-sm">
             <input
@@ -173,7 +173,7 @@ const AddRawMaterial = () => {
             htmlFor="documentation"
             className="block mt-3 mb-1 font-medium text-gray-700"
           >
-            Documentation
+            Foto
           </label>
           <div className="relative mt-1 rounded-md shadow-sm">
             <input
@@ -191,7 +191,7 @@ const AddRawMaterial = () => {
           type="submit"
           className="w-full px-4 py-2 text-white transition duration-200 bg-blue-500 rounded hover:bg-blue-600"
         >
-          {loading ? "Submitting..." : "Submit"}
+          {loading ? "Submitting..." : "Tambah"}
         </button>
       </form>
 
