@@ -21,7 +21,7 @@
     "react-router-dom": "^6.30.3",
     "react-svg-to-image": "^3.0.0",
     "swr": "^2.1.5",
-    "web3": "^1.9.0"
+    "web3": "^4.16.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
